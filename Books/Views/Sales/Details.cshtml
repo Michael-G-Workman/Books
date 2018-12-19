@@ -1,0 +1,50 @@
+﻿@model Books.Models.Sale
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sale</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.stor_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stor_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ord_num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ord_num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ord_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ord_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qty)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
