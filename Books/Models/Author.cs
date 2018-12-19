@@ -38,6 +38,6 @@ namespace Books.Models
 
         public bool contract { get; set; }
 
-        public virtual ICollection<Title> Titles { get; set; }
+        // public virtual ICollection<Title> Titles { get; set; }
     }
 }

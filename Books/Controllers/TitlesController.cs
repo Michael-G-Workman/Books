@@ -18,7 +18,9 @@ namespace Books.Controllers
         // GET: Titles
         public ActionResult Index()
         {
-            return View(db.Titles.ToList());
+            var titles = db.Titles.ToList();
+
+            return View(titles);
         }
 
         // GET: Titles/Details/5
