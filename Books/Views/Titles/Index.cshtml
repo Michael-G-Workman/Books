@@ -35,13 +35,13 @@
         <th>
             @Html.DisplayNameFor(model => model.ytd_sales)
         </th>
-        <th>
+        <th width="300">
             @Html.DisplayNameFor(model => model.notes)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.pubdate)
         </th>
-        <th></th>
+        <th width="300"></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -77,9 +77,9 @@
             @Html.DisplayFor(modelItem => item.pubdate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { @class = "btn btn-primary" })
         </td>
     </tr>
 }

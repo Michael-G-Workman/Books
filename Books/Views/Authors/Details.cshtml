@@ -2,16 +2,19 @@
 
 @{
     ViewBag.Title = "Details";
+
+    IEnumerable<string> titles = (IEnumerable<string>)ViewBag.Titles;
 }
 
 <h2>Details</h2>
 
+@* Display the Author's Details *@
 <div>
     <h4>Author</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.au_id)
+            Author ID
         </dt>
 
         <dd>
@@ -19,7 +22,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.au_lname)
+            Last Name
         </dt>
 
         <dd>
@@ -27,7 +30,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.au_fname)
+            First Name
         </dt>
 
         <dd>
@@ -35,7 +38,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.phone)
+            Phone
         </dt>
 
         <dd>
@@ -43,7 +46,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.address)
+            Address
         </dt>
 
         <dd>
@@ -51,7 +54,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.city)
+            City
         </dt>
 
         <dd>
@@ -59,7 +62,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.state)
+            State
         </dt>
 
         <dd>
@@ -67,7 +70,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.zip)
+            Zip Code
         </dt>
 
         <dd>
@@ -75,7 +78,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.contract)
+            Contract
         </dt>
 
         <dd>
@@ -84,7 +87,24 @@
 
     </dl>
 </div>
+
+@* Display the Author's Titles *@
+<h4>Titles</h4>
+
+@if (titles != null)
+{
+    foreach (var title in titles)
+    {
+        <p>@title</p>
+    }
+}
+else
+{
+    <h5>No Titles For This Author</h5>
+}
+
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class="btn btn-primary"})
+    @Html.ActionLink("Back to List", "Index", null, new { @class="btn btn-primary"})
 </p>

@@ -13,6 +13,7 @@ namespace Books.DAL
         public DbSet<Models.Author> Authors { get; set; }
         public DbSet<Models.Title> Titles { get; set; }
         public DbSet<Models.Sale> Sales { get; set; }
+        public DbSet<Models.TitleAuthor> TitlesAuthor { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -33,6 +33,17 @@ namespace Books.Controllers
             {
                 return HttpNotFound();
             }
+
+            // linq query to get all titles for the author
+            var titles = from ta in db.TitlesAuthor
+                        join t in db.Titles
+                        on ta.title_id equals t.title_id
+                        where (ta.au_id == author.au_id)
+                        select t.title;
+
+            // create array of titles for this author 
+            ViewBag.Titles = titles.ToArray();
+
             return View(author);
         }
 

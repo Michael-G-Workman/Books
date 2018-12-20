@@ -169,6 +169,7 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\Title.cs" />
+    <Compile Include="Models\TitleAuthor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

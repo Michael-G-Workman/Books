@@ -83,16 +83,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.pub_date)
+            @Html.DisplayNameFor(model => model.pubdate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.pub_date)
+            @Html.DisplayFor(model => model.pubdate)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </p>
