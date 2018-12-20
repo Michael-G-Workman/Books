@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Books.DAL;
 using Books.Models;
+using Books.ViewModels;
 
 namespace Books.Controllers
 {
@@ -34,12 +35,21 @@ namespace Books.Controllers
                 return HttpNotFound();
             }
 
-            // linq query to get all titles for the author
+            // linq query to get all titles for the author with a View Model
             var titles = from ta in db.TitlesAuthor
                         join t in db.Titles
                         on ta.title_id equals t.title_id
                         where (ta.au_id == author.au_id)
-                        select t.title;
+                        select new TitleVM { title_id = t.title_id,
+                            title = t.title,
+                            type = t.type,
+                            pub_id = t.pub_id,
+                            price = t.price,
+                            advance = t.advance,
+                            royalty = t.royalty,
+                            ytd_sales = t.ytd_sales,
+                            notes = t.notes,
+                            pubdate = t.pubdate };
 
             // create array of titles for this author 
             ViewBag.Titles = titles.ToArray();

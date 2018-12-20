@@ -1,9 +1,10 @@
 ﻿@model Books.Models.Author
+@using Books.ViewModels
 
 @{
     ViewBag.Title = "Details";
 
-    IEnumerable<string> titles = (IEnumerable<string>)ViewBag.Titles;
+    IEnumerable<TitleVM> titles = (IEnumerable<TitleVM>)ViewBag.Titles;
 }
 
 <h2>Details</h2>
@@ -93,18 +94,85 @@
 
 @if (titles != null)
 {
-    foreach (var title in titles)
+<table class="table">
+    <tr>
+        <th>
+            Title ID
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            Publisher ID
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Advance
+        </th>
+        <th>
+            Royalty
+        </th>
+        <th>
+            YTD Sales
+        </th>
+        <th>
+            Notes
+        </th>
+        <th>
+            Publish Date
+        </th>
+    </tr>
+
+    @foreach (var title in titles)
     {
-        <p>@title</p>
+    <tr>
+        <td>
+            @title.title_id
+        </td>
+        <td>
+            @title.title
+        </td>
+        <td>
+            @title.type
+        </td>
+        <td>
+            @title.pub_id
+        </td>
+        <td>
+            @title.price
+        </td>
+        <td>
+            @title.advance
+        </td>
+        <td>
+            @title.royalty
+        </td>
+        <td>
+            @title.ytd_sales
+        </td>
+        <td>
+            @title.notes
+        </td>
+        <td>
+            @title.pubdate
+        </td>
+    </tr>
     }
-}
-else
-{
+    </table>
+
+    }
+    else
+    {
     <h5>No Titles For This Author</h5>
-}
+    }
 
 
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class="btn btn-primary"})
-    @Html.ActionLink("Back to List", "Index", null, new { @class="btn btn-primary"})
-</p>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+    </p>
