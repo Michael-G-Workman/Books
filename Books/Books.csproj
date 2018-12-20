@@ -233,6 +233,7 @@
     <Content Include="Views\Sales\Edit.cshtml" />
     <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Titles\TitleError.cshtml" />
+    <Content Include="Views\Shared\License.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -31,6 +31,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("License", "License", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Authors", "Index", "Authors")</li>
@@ -44,7 +45,8 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Abion Technology http://www.abion.net</p>
+            <p>&copy; @DateTime.Now.Year - Abion Technology</p>
+            <p><a href="http://www.abion.net" target="_blank">http://www.abion.net</a></p>
         </footer>
     </div>
 

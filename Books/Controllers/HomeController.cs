@@ -26,5 +26,12 @@ namespace Books.Controllers
 
             return View();
         }
+
+        public ActionResult License()
+        {
+            ViewBag.Message = "License Info";
+
+            return View();
+        }
     }
 }
