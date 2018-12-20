@@ -68,12 +68,12 @@ namespace Books.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Title title = db.Titles.Find(id);
-            if (title == null)
+            Title singleTitle = db.Titles.Find(id);
+            if (singleTitle == null)
             {
                 return HttpNotFound();
             }
-            return View(title);
+            return View(singleTitle);
         }
 
         // POST: Titles/Edit/5
@@ -81,15 +81,24 @@ namespace Books.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,title_id,title,type,pub_id,price,advance,royalty,ytd_sales,notes,pubdate")] Title title)
+        public ActionResult Edit([Bind(Include = "ID,title_id,title,type,pub_id,price,advance,royalty,ytd_sales,notes,pubdate")] Title singleTitle)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(title).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(singleTitle).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(singleTitle);
             }
-            return View(title);
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = "Edit Title Action: Error: " + ex.Message;
+                ViewBag.InnerException = "Inner Exception: " + ex.InnerException;
+                return View("TitleError");
+            }
         }
 
         // GET: Titles/Delete/5
