@@ -84,11 +84,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.pub_date)
+            @Html.DisplayNameFor(model => model.pubdate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.pub_date)
+            @Html.DisplayFor(model => model.pubdate)
         </dd>
 
     </dl>
@@ -97,8 +97,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
         </div>
     }
 </div>

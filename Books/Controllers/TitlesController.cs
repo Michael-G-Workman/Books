@@ -49,16 +49,16 @@ namespace Books.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "title_id,title,type,pub_id,price,advance,royalty,ytd_sales,notes,pubdate")] Title title)
+        public ActionResult Create([Bind(Include = "title_id,title,type,pub_id,price,advance,royalty,ytd_sales,notes,pubdate")] Title singleTitle)
         {
             if (ModelState.IsValid)
             {
-                db.Titles.Add(title);
+                db.Titles.Add(singleTitle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(title);
+            return View(singleTitle);
         }
 
         // GET: Titles/Edit/5
@@ -108,12 +108,12 @@ namespace Books.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Title title = db.Titles.Find(id);
-            if (title == null)
+            Title singleTitle = db.Titles.Find(id);
+            if (singleTitle == null)
             {
                 return HttpNotFound();
             }
-            return View(title);
+            return View(singleTitle);
         }
 
         // POST: Titles/Delete/5
@@ -121,8 +121,8 @@ namespace Books.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Title title = db.Titles.Find(id);
-            db.Titles.Remove(title);
+            Title singleTitle = db.Titles.Find(id);
+            db.Titles.Remove(singleTitle);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
