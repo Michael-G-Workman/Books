@@ -9,6 +9,7 @@ namespace Books.Models
     {
         [Key]
         [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ID { get; set; }
 
         [Required(AllowEmptyStrings = false),MaxLength(4)]
