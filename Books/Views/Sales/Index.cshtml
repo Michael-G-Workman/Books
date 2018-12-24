@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Books.Models.Sale>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Sales";
 }
 
-<h2>Index</h2>
+<h2>Sales</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.ord_num)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ord_date)
+            @item.ord_date.ToString("MM/dd/yyyy")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.qty)

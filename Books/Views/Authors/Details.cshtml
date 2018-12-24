@@ -83,11 +83,14 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.contract)
+            @Html.CheckBoxFor(model => model.contract)
         </dd>
 
     </dl>
 </div>
+
+<br />
+<br />
 
 @* Display the Author's Titles *@
 <h4>Titles</h4>
@@ -171,6 +174,9 @@
     <h5>No Titles For This Author</h5>
     }
 
+<br />
+<br />
+<br />
 
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-primary" })
