@@ -47,7 +47,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.price)
+            @Model.price.Value.ToString("$0.00")
         </dd>
 
         <dt>
@@ -55,7 +55,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.advance)
+            @Model.advance.Value.ToString("$0.00")
         </dd>
 
         <dt>
@@ -63,7 +63,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.royalty)
+            @Model.royalty.Value.ToString("$0.00")
         </dd>
 
         <dt>
@@ -71,7 +71,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ytd_sales)
+            @Model.ytd_sales.Value.ToString("$0")
         </dd>
 
         <dt>
@@ -87,7 +87,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.pubdate)
+            @Model.pubdate.ToString("MM/dd/yyyy")
         </dd>
 
     </dl>
