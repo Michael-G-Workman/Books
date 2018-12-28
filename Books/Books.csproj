@@ -264,7 +264,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Authors\Create.cshtml" />
+    <Content Include="Views\Authors\Create_backup.cshtml" />
     <Content Include="Views\Authors\Delete.cshtml" />
     <Content Include="Views\Authors\Details.cshtml" />
     <Content Include="Views\Authors\Edit.cshtml" />
@@ -281,6 +281,7 @@
     <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Titles\TitleError.cshtml" />
     <Content Include="Views\Shared\License.cshtml" />
+    <Content Include="Views\Authors\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

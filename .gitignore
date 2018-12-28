@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /Books/Properties/PublishProfiles/Books20181225085249 - Web Deploy.pubxml
+/Books/Views/Authors/Create_backup.cshtml
