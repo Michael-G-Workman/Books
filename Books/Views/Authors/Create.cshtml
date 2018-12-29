@@ -7,6 +7,7 @@
 
 <h2>Create</h2>
 
+@* Form for Create New Author *@
 <div class="form-horizontal">
     <h4>Author</h4>
     <hr />
@@ -75,7 +76,15 @@
         </div>
     </div>
 
+    @* Div Container for Validation Messages *@
     <div class="text-danger" id="ValidationMessage">
+    </div>
+
+    @* Spinner Image and Div for Web App Busy Working *@
+    <div id="modal" class="modal" style="display:none;padding-top:400px;">
+        <div class="text-center">
+            <img alt="" src="~/Content/Images/loader4.gif" />
+        </div>
     </div>
 
     <div class="form-group">
@@ -86,6 +95,7 @@
 
 </div>
 
+@* JQuery Code for Form Validation and also AJAX HTTP POST *@
 @section Scripts {
 <script type="text/javascript">
 $(document).ready(function () {
@@ -200,6 +210,9 @@ $(document).ready(function () {
                 function (data, status) {
                     // alert("Data: " + data + "\nStatus: " + status);
                 });
+
+            // show spinner for busy
+            $("#modal").show();
 
             // wait 5 seconds for the database insert to complete before redirecting
             window.setTimeout(function () { location.href = "/Authors"; }, 5000);
