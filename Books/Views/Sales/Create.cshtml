@@ -89,6 +89,9 @@
             var stor_id = "";
             if ($("#stor_id").val().trim() != "") {
                 stor_id = $("#stor_id").val().trim();
+                if (stor_id.length > 4) {
+                    stor_id = stor_id.substring(0, 4);
+                }
             }
             else {
                 formValidated = false;
