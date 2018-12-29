@@ -6,7 +6,7 @@ By Michael G. Workman
 
 Azure Cloud Platform Temporary URL: https://books20181226012156.azurewebsites.net/
 
-Permanent URL: http://bookz-and-authorz.net
+Permanent URL: http://www.bookz-and-authorz.net
 
 This example application is a standard ASP.NET MVC 5 Web Application with database first Entity Framework ORM,
 it is a bit different than normal in that it uses a GUID for the primary key in the db tables and EF models instead
