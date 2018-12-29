@@ -4,7 +4,7 @@ Example ASP.NET MVC 5 Web Application with Entity Framework
 
 By Michael G. Workman
 
-Azure Cloud Platform Temporary URL: https://books20181226012156.azurewebsites.net/
+Azure Cloud Platform Generic URL: https://books20181226012156.azurewebsites.net/
 
 Permanent URL: http://www.bookz-and-authorz.net
 
