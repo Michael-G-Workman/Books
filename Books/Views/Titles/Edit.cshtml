@@ -109,17 +109,16 @@
     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </div>
 
+@Styles.Render("~/Content/cssjqryUi")
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    
     @Scripts.Render("~/bundles/jqueryui")
-    @Styles.Render("~/Content/cssjqryUi")
 
     <script type="text/javascript">
         $(document).ready(function () {
             $('.datepicker').datepicker({
             });
-
         });
     </script>
 }

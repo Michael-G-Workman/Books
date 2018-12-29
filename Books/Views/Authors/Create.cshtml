@@ -79,6 +79,8 @@
     @* Div Container for Validation Messages *@
     <div class="text-danger" id="ValidationMessage">
     </div>
+    <br />
+    <br />
 
     @* Spinner Image and Div for Web App Busy Working *@
     <div id="modal" class="modal" style="display:none;padding-top:400px;">
@@ -218,8 +220,8 @@ $(document).ready(function () {
             // show spinner for busy
             $("#modal").show();
 
-            // wait 5 seconds for the database insert to complete before redirecting
-            window.setTimeout(function () { location.href = "/Authors"; }, 5000);
+            // wait 4 seconds for the database insert to complete before redirecting
+            window.setTimeout(function () { location.href = "/Authors"; }, 4000);
 
         }
         else
