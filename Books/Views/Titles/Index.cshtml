@@ -10,79 +10,84 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.title_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pub_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.advance)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.royalty)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ytd_sales)
-        </th>
-        <th width="300">
-            @Html.DisplayNameFor(model => model.notes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pubdate)
-        </th>
-        <th width="400"></th>
-    </tr>
+
+    <div class="row">
+        <div class="col-sm-1">
+            <b>@Html.DisplayNameFor(model => model.title_id)</b>
+        </div>
+        <div class="col-sm-1">
+            <b>@Html.DisplayNameFor(model => model.title)</b>
+        </div>
+        @*
+        <div class="col-sm-1">
+            <b>@Html.DisplayNameFor(model => model.type)</b>
+        </div>
+        *@
+        <div class="col-sm-1">
+            <b>@Html.DisplayNameFor(model => model.pub_id)</b>
+        </div>
+        <div class="col-sm-1">
+            <b>@Html.DisplayNameFor(model => model.price)</b>
+        </div>
+        <div class="col-sm-1">
+            <b>@Html.DisplayNameFor(model => model.advance)</b>
+        </div>
+        <div class="col-sm-1">
+            <b>@Html.DisplayNameFor(model => model.royalty)</b>
+        </div>
+        <div class="col-sm-1">
+            <b>@Html.DisplayNameFor(model => model.ytd_sales)</b>
+        </div>
+        <div class="col-sm-1">
+            <b>@Html.DisplayNameFor(model => model.notes)</b>
+        </div>
+        <div class="col-sm-1">
+            <b>@Html.DisplayNameFor(model => model.pubdate)</b>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+<hr />
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <div class="row">
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.title_id)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.title)
-        </td>
-        <td>
+        </div>
+        @*
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.type)
-        </td>
-        <td>
+        </div>
+        *@
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.pub_id)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @item.price.Value.ToString("$0.00")
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @item.advance.Value.ToString("$0.00")
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @item.royalty.Value.ToString("$0")
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @item.ytd_sales.Value.ToString("$0")
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.notes)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @item.pubdate.ToString("MM/dd/yyyy")
-        </td>
-        <td>
+        </div>
+        <div class="col-lg-3">
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class = "btn btn-primary" })
             @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-primary" })
             @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { @class = "btn btn-primary" })
-        </td>
-    </tr>
+        </div>
+    </div>
+    <hr />
 }
 
-</table>

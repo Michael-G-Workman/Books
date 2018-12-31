@@ -10,43 +10,44 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.stor_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ord_num)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ord_date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.qty)
-        </th>
-        <th></th>
-    </tr>
+
+<div class="row">
+        <div class="col-sm-2">
+            <b>@Html.DisplayNameFor(model => model.stor_id)</b>
+        </div>
+        <div class="col-sm-2">
+            <b>@Html.DisplayNameFor(model => model.ord_num)</b>
+        </div>
+        <div class="col-sm-2">
+            <b>@Html.DisplayNameFor(model => model.ord_date)</b>
+        </div>
+        <div class="col-sm-2">
+            <b>@Html.DisplayNameFor(model => model.qty)</b>
+        </div>
+        <div class="col-sm-4"></div>
+ </div>
+<hr />
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <div class="row">
+        <div class="col-sm-2">
             @Html.DisplayFor(modelItem => item.stor_id)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-2">
             @Html.DisplayFor(modelItem => item.ord_num)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-2">
             @item.ord_date.ToString("MM/dd/yyyy")
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-2">
             @Html.DisplayFor(modelItem => item.qty)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-4">
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class = "btn btn-primary" })
             @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-primary" })
             @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { @class = "btn btn-primary" })
-        </td>
-    </tr>
+        </div>
+    </div>
+    <hr />
 }
 
-</table>

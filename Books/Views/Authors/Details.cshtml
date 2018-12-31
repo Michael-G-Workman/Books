@@ -97,76 +97,76 @@
 
 @if ((titles != null) && (titles.Count() > 0))
 {
-<table class="table">
-    <tr>
-        <th>
-            Title ID
-        </th>
-        <th>
-            Title
-        </th>
-        <th>
-            Type
-        </th>
-        <th>
-            Publisher ID
-        </th>
-        <th>
-            Price
-        </th>
-        <th>
-            Advance
-        </th>
-        <th>
-            Royalty
-        </th>
-        <th>
-            YTD Sales
-        </th>
-        <th>
-            Notes
-        </th>
-        <th>
-            Publish Date
-        </th>
-    </tr>
+    <div class="row">
+        <div class="col-sm-1">
+            <b>Title ID</b>
+        </div>
+        <div class="col-sm-2">
+            <b>Title</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Type</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Publisher ID</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Price</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Advance</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Royalty</b>
+        </div>
+        <div class="col-sm-1">
+            <b>YTD Sales</b>
+        </div>
+        <div class="col-sm-2">
+            <b>Notes</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Publish Date</b>
+        </div>
+    </div>
+    <hr />
 
-    @foreach (var title in titles)
+    foreach (var title in titles)
     {
-    <tr>
-        <td>
+    <div class="row">
+        <div class="col-sm-1">
             @title.title_id
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-2">
             @title.title
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @title.type
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @title.pub_id
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @title.price.Value.ToString("$0.00")
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @title.advance.Value.ToString("$0.00")
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @title.royalty.Value.ToString("$0.00")
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @title.ytd_sales.Value.ToString("$0")
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-2">
             @title.notes
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @title.pubdate.ToString("MM/dd/yyyy")
-        </td>
-    </tr>
+        </div>
+    </div>
+    <hr />
     }
-    </table>
 
     }
     else

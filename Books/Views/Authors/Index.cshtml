@@ -11,73 +11,72 @@
 </p>
 
 @* Display Table Of All Authors *@
-<table class="table">
-    <tr>
-        <th>
-            Author ID
-        </th>
-        <th>
-            Last Name
-        </th>
-        <th>
-            First Name
-        </th>
-        <th>
-            Phone
-        </th>
-        <th>
-            Address
-        </th>
-        <th>
-            City
-        </th>
-        <th>
-            State
-        </th>
-        <th>
-            Zip
-        </th>
-        <th>
-            Contract
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+        <div class="col-sm-1">
+            <b>Author ID</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Last Name</b>
+        </div>
+        <div class="col-sm-1">
+            <b>First Name</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Phone</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Address</b>
+        </div>
+        <div class="col-sm-1">
+            <b>City</b>
+        </div>
+        <div class="col-sm-1">
+            <b>State</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Zip</b>
+        </div>
+        <div class="col-sm-1">
+            <b>Contract</b>
+        </div>
+        <div class="col-sm-3"></div>
+</div>
+<hr />
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <div class="row">
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.au_id)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.au_lname)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.au_fname)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.phone)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.address)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.city)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.state)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @Html.DisplayFor(modelItem => item.zip)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-1">
             @Html.CheckBoxFor(modelItem => item.contract)
-        </td>
-        <td>
+        </div>
+        <div class="col-sm-3">
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class = "btn btn-primary" })
             @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-primary" })
             @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { @class = "btn btn-primary" })
-        </td>
-    </tr>
+        </div>
+     </div>
+     <hr />
 }
-
-</table>
