@@ -17,7 +17,6 @@ the AuthorsDB sql server database used by this solution.
 
 To create the database on Azure Cloud Platform, first create the database in the Azure portal and run the create script
 with the create database statement commented out or removed in AUTHORS_Create.sql TSQL script in SQL Server Repo.
-Azure Cloud Platform will not let you create a DB using a SQL Script, it can only be done from the Portal.
 
 This solution works with LocalDB sql server, but changing the BooksContext connection string in Web.Config
 file will enable you to use it with any other sql server database. In this repo it has been configured to work with
